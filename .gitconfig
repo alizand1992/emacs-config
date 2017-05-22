@@ -1,0 +1,39 @@
+[merge]
+	conflictstyle = diff3
+[push]
+	default = current
+[core]
+	excludesfile = dev/.gitignore
+	editor = emacs
+[alias]
+	st = status --ignore-submodules
+	ci = commit
+	co = checkout
+	conb = checkout origin/master -b
+	cp = cherry-pick
+	br = branch
+	di = diff
+	id = log -1 --pretty=%h
+	logg = log --graph --decorate --oneline
+	pu = push -u ; git status
+	lg = log origin/master.. --name-status
+	ls = log --pretty=format:"%C(yellow)%h%Cgreen%d\\ %Creset%s%Cred\\ [%cn]" --decorate
+	ll = log --pretty=format:"%C(yellow)%h%Cgreen%d\\ %Creset%s%Cred\\ [%cn]" --decorate --numstat --date=short
+	lds = log --pretty=format:"%C(yellow)%h%C(cyan)\\ %ad%C(green)%d\\ %Creset%s%Cred\\ [%cn]" --decorate --date=short
+	logn = log --name-status
+	su = stash -u
+    diff = diff -R
+[color]
+	ui = always
+[user]
+	name = Ali Zand
+	email = alizand9224@gmail.com
+[url "https://"]
+	insteadOf = git://
+[rerere]
+	enabled = true
+	autoupdate = true
+[credential]
+	helper = osxkeychain
+[hub]
+	host = github.on-site.com
