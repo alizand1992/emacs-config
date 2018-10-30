@@ -5,8 +5,9 @@
 [core]
 	excludesfile = dev/.gitignore
 	editor = emacs
+	autocrlf = input
 [alias]
-	st = status --ignore-submodules
+	st = status
 	ci = commit
 	co = checkout
 	conb = checkout origin/master -b
@@ -23,11 +24,17 @@
 	logn = log --name-status
 	su = stash -u
     diff = diff -R
+	list-merged = ! git branch -r --no-color --merged origin/master  | grep -P 'origin\\/[A-Z]{2,5}[0-9]?-[0-9]{1,4}' | sed -r 's/^  origin\\///' | sort
+	ls-bin = ! bash -c 'comm -13 <(git grep -Ic \"\" | sort) <(git grep -c \"\" | sort)' | cut -d : -f 1
+	show-clean-files = ! bash -c 'comm -13 <(git show-dirty-files | sort) <(git ls-files  | sort)'
+	show-dirty-files = ! git status --short  | sed -e 's/^?? //' | sed -e 's/^ M //'
+	ws = ! git add . && (git diff --cached --color=never -w | git apply --cached -R)
+	pull-request = ! GITHUB_HOST=$(git config remote.origin.url | sed -r 's/git@(.*):(.*)/\\1/') hub pull-request -m \"$(git rev-parse --abbrev-ref HEAD)\"
 [color]
 	ui = always
 [user]
 	name = Ali Zand
-	email = alizand9224@gmail.com
+	email = ali.zand@realpage.com
 [url "https://"]
 	insteadOf = git://
 [rerere]
@@ -37,3 +44,8 @@
 	helper = osxkeychain
 [hub]
 	host = github.on-site.com
+[branch]
+	autosetuprebase = always
+[gc]
+	rerereUnresolved = 2
+	rerereResolved = 30
