@@ -1,0 +1,6 @@
+;; -*- emacs-lisp -*- <16/10/19 13:56:55 /home/dev/.emacs.d/tramp>
+;; Tramp connection history.  Don't change this file.
+;; You can delete it, forcing Tramp to reapply the checks.
+
+((["scp" nil "js_alliance2ndPLPass.js" nil nil]
+  nil))

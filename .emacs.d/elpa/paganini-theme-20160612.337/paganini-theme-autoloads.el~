@@ -1,0 +1,13 @@
+;;; paganini-theme-autoloads.el --- automatically extracted autoloads
+;;
+;;; Code:
+
+
+(provide 'paganini-theme-autoloads)
+;; Local Variables:
+;; version-control: never
+;; no-byte-compile: t
+;; no-update-autoloads: t
+;; coding: utf-8
+;; End:
+;;; paganini-theme-autoloads.el ends here
