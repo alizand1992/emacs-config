@@ -80,7 +80,7 @@
   (when (not (string= (file-name-extension buffer-file-name) "md"))
     (delete-trailing-whitespace)))
 (setq-default truncate-lines t)
-(load "~/ws/scripts/emacs-lisp/osm-commit.el")
+;(load "~/ws/scripts/emacs-lisp/osm-commit.el")
 (remove-hook 'comint-output-filter-functions
              'comint-postoutput-scroll-to-bottom)
 (add-to-list 'load-path "~/.emacs.d/lisp")
@@ -91,4 +91,4 @@
   "BASH completion hook")
 (add-hook 'shell-dynamic-complete-functions
   'bash-completion-dynamic-complete)
-(load "~/ws/scripts/emacs-lisp/emacs_utils/load-all.el")
+(load "~/.emacs.d/load-all.el")
